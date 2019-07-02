@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{%block content%}
+<h1>It's Trackin' Time!</h1>
+<h2>Here's what you're working on: 
+    {{ all_habits }}
+</h2>
+    <div> Care to add to your successes?
+    <form action="" method="post">
+        <table>
+        {{ form.as_table }}
+        </table>
+    </form>
+    </div>
+{% endblock %}
