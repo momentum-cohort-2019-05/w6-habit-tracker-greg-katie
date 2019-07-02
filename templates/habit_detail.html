@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Welcome to Habit Tracker</h1>  
+<h2>Good Luck as you persue your Goal: {{ habit }}</h2>
+    <div>
+        {% for record in records %}
+        <p><strong>Date:</strong> {{ record.date }}</p>
+        <p><strong>Outcome:</strong> {{ record.outcome }}</p>
+    </div>
+    {% endfor %}
+{% endblock %}
+
+

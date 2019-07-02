@@ -6,7 +6,7 @@ from core.models import Habit, Record
 
 def habit_list(request):
     habits = Habit.objects.all()
-    return render(request, 'core/habit_index.html', context={'habits': habits})
+    return render(request, 'core/habit_detail.html', context={'habits': habits})
 
 
 def record_list(request):
@@ -18,3 +18,8 @@ def index(request):
     
     return render(request,'index.html')
 
+def habit_detail(request, pk):
+    habit = Habit.objects.get(pk=pk)
+    records = Record.objects.filter(habit=habit)
+    context = {"habit": habit, "records": records}
+    return render(request, 'habit_detail.html', context=context)

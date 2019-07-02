@@ -25,6 +25,7 @@ urlpatterns = [
     path('', views.index, name='home'), 
     path('habits/', views.habit_list, name='habit-list'),
     path('habits/record/', views.record_list, name='record-list'),
+    path('habits/<int:pk>/', )
 ]
 
 # if settings.DEBUG:
