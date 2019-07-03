@@ -9,7 +9,7 @@ class Habit(models.Model):
     name = models.CharField(max_length=200)
     objective = models.TextField(max_length=700)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    observers = models.ManyToManyField("User")
+    observers = models.ManyToManyField(User, related_name='observers')
     
     def __str__(self):
         return self.name
